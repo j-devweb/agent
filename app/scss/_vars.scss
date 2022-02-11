@@ -1,0 +1,19 @@
+$white:#fff;
+$black:#000;
+$accent:#e8131b;
+$top-bg:#152d3e;
+$top-bg-light:#3d6387;
+
+
+@mixin clamp($row) {
+  -webkit-line-clamp: $row;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin grid($val) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+  gap: 30px;
+  }

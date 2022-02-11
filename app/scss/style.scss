@@ -1,0 +1,826 @@
+@import "vars";
+@import "fonts";
+@import "reset";
+@import "libs";
+@import "global";
+
+.logo {
+  position: relative;
+  z-index: 900;
+  &__img {
+    object-fit: contain;
+  }
+}
+
+// Кнопка меню бургера
+.menu-btn {
+  display: none;
+  position: relative;
+  width: 30px;
+  height: 20px;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: $white;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &:before {
+    top: 0;
+  }
+
+  &:after {
+    bottom: 0;
+  }
+
+  &__line {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 2px;
+    background-color: $white;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &.active .menu-btn__line {
+    opacity: 0;
+  }
+
+  &.active::before {
+    top: 50%;
+    transform: rotate(45deg);
+  }
+
+  &.active::after {
+    bottom: auto;
+    top: 50%;
+    transform: rotate(-45deg);
+  }
+}
+
+.header {
+  // Вверхний блок с контактами
+  &__top {
+    background-color: $top-bg;
+    padding: 15px 0;
+    height: 57px;
+  }
+
+  &__top-box {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__contact {
+    display: flex;
+    color: $white;
+    font-size: 15px;
+    font-weight: 400;
+
+    li {
+      margin-right: 20px;
+    }
+
+    span {
+      margin-right: 10px;
+      color: $accent;
+    }
+  }
+
+  // Навигация Top
+  .navigation {
+    position: fixed;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    height: 70px;
+    transition: all 0.3s;
+    z-index: 900;
+
+    &__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &.active {
+      background-color: $top-bg;
+      top: 0;
+    }
+  }
+}
+
+// Вверхнее меню
+.menu-items {
+  display: flex;
+  align-items: center;
+}
+
+.menu-items li {
+  padding: 10px 20px;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $top-bg-light;
+  }
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: $white;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+// dropdown menu
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu,
+.menu-right {
+  position: absolute;
+  left: 0;
+  top: 30px;
+  width: 100%;
+  min-width: 210px;
+  background-color: $top-bg;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.menu-right {
+  top: 0;
+  left: 110%;
+}
+
+.dropdown:hover .dropdown-menu {
+  top: 50px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-right:hover .menu-right {
+  left: 100%;
+  opacity: 1;
+  visibility: visible;
+}
+
+// .arrow {
+//   transform: translateY(-50%);
+//   width: 0;
+//   height: 0;
+//   border-left: 7px solid transparent;
+//   border-right: 7px solid transparent;
+//   border-top: 7px solid $white;
+// }
+
+// Блок с социал
+.social {
+  font-size: 18px;
+  color: $white;
+  display: flex;
+
+  li {
+    margin-left: 20px;
+
+    & a {
+      transition: all 0.3s;
+    }
+
+    & a:hover {
+      color: $accent;
+    }
+  }
+}
+
+// =========================top====================
+.top {
+  background-image: url(../images/bg/study-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  // ======================top=====================
+
+  &__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 127px;
+    height: 350px;
+  }
+
+  &__title {
+    font-size: 35px;
+    text-transform: uppercase;
+  }
+}
+
+.top-slider {
+  &__item {
+    padding-top: 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 3;
+
+    &::before {
+      position: absolute;
+      content: "";
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      opacity: 30%;
+      z-index: 10;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 3;
+    }
+  }
+
+  &__box {
+    height: calc(100vh - 150px);
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 15;
+  }
+
+  &__content {
+    max-width: 600px;
+    padding-left: 50px;
+  }
+
+  &__content--right {
+    max-width: 100%;
+    width: 100%;
+    margin: auto;
+  }
+
+  &__title {
+    position: relative;
+    font-size: 60px;
+    line-height: 66px;
+    font-weight: 700;
+    color: $white;
+    margin-bottom: 30px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 25%;
+      height: 2px;
+      background-color: $accent;
+    }
+  }
+
+  &__text {
+    color: $white;
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  // Настройки слайдера
+  & .slick-arrow {
+    position: absolute;
+    top: 50%;
+    font-size: 10;
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: transparent;
+    z-index: 10;
+  }
+
+  & .slick-arrow.slick-prev {
+    left: 10px;
+  }
+
+  & .slick-arrow.slick-next {
+    right: 10px;
+  }
+
+  & .slick-arrow i {
+    font-size: 35px;
+    font-weight: 300;
+    color: $white;
+    border-radius: 50%;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: $accent;
+    }
+  }
+}
+
+// Section about
+.about {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__img {
+    object-fit: contain;
+    padding: 0 10px;
+    margin-right: 20px;
+  }
+
+  &__text {
+    font-size: 21px;
+    line-height: 34px;
+    margin-bottom: 15px;
+    font-weight: 400;
+    color: #555555;
+
+    span {
+      color: $accent;
+      font-weight: 600;
+    }
+  }
+}
+
+// Section services
+.services {
+  background-color: #eaeef1;
+  &__inner {
+  }
+
+  &__box {
+    @include grid(250px);
+  }
+
+  &__item {
+    position: relative;
+    text-align: center;
+    background-color: $white;
+    border-bottom: 3px solid $top-bg-light;
+    border-radius: 10px;
+    transition: border-color 0.3s, background-color 0.3s;
+
+    &:hover {
+      background-color: rgb(196, 196, 196, 0.1);
+      border-color: $accent;
+    }
+
+    &:hover .services__subtitle {
+      color: $accent;
+    }
+  }
+
+  &__link {
+    padding: 30px 20px;
+    display: block;
+  }
+
+  img {
+    display: block;
+    margin: auto;
+  }
+
+  &__subtitle {
+    text-transform: uppercase;
+    font-size: 21px;
+    line-height: 34px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #555;
+    transition: color 0.3s;
+  }
+}
+
+// Контакт
+
+.contact {
+  background-color: $top-bg-light;
+  color: $black;
+
+  &__top {
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.form {
+  max-width: 800px;
+  width: 100%;
+  background-color: $white;
+  padding: 20px;
+  border-radius: 10px;
+
+  &__title-box {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  &__box {
+    position: relative;
+    margin: 20px;
+
+    span {
+      position: absolute;
+      top: 35px;
+      left: -10px;
+
+      z-index: 100;
+    }
+  }
+
+  &__field {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 5px 30px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 400;
+    border: 1px solid transparent;
+    outline: transparent;
+    transition: all 0.3s;
+
+    &::placeholder {
+      color: black;
+      opacity: 50%;
+      font-size: 15px;
+    }
+
+    &:focus {
+      border-color: $accent;
+    }
+
+    &:active {
+      border-color: $accent;
+    }
+  }
+
+  &__field--big {
+    height: 150px;
+    resize: none;
+  }
+
+  &__btn {
+    padding: 12px 25px;
+    border: transparent;
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+}
+
+// Footer
+.footer {
+  background-color: $top-bg;
+  padding: 30px 0;
+  color: $white;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    position: relative;
+    margin-right: 30px;
+    z-index: 10;
+  }
+
+  &__item {
+    margin: 10px 20px;
+
+    h4 {
+      font-size: 25px;
+      margin-bottom: 20px;
+      font-weight: 400;
+    }
+  }
+
+  &__item-info {
+    max-width: 300px;
+    width: 100%;
+    display: flex;
+
+    ul li {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    i {
+      margin-right: 20px;
+      font-size: 21px;
+    }
+
+    span {
+      line-height: 20px;
+    }
+  }
+
+  &__item-menu {
+    li {
+      font-size: 16px;
+    }
+
+    li:nth-child(1) {
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+
+    li a {
+      transition: all 0.3s;
+
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+}
+
+// How to work
+.how-work {
+  background-color: $white;
+
+  &__title {
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding-top: 30px;
+  }
+
+  &__box {
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+    text-align: center;
+    line-height: 20px;
+    color: $black;
+    font-size: 16px;
+    margin: 10px 15px 20px;
+
+    &:not(:last-child)::before {
+      position: absolute;
+      content: "";
+      background-image: url(../images/arrow.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+      width: 100px;
+      height: 100px;
+      top: 0;
+      right: -63px;
+    }
+
+    a {
+      font-size: 18px;
+      color: $top-bg-light;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-decoration: underline;
+
+      &:hover {
+        color: $accent;
+      }
+    }
+
+    span {
+      display: block;
+      width: 100px;
+      height: 100px;
+      padding: 35px;
+      line-height: 30px;
+      background-color: #009ce3;
+      border-radius: 50%;
+      font-size: 30px;
+      margin: auto;
+      margin-bottom: 20px;
+      color: $white;
+      border: 1px solid $accent;
+    }
+  }
+}
+
+// Вопросы
+.questions {
+  background-color: #eaeef1;
+
+  &__inner {
+    max-width: 800px;
+  }
+
+  &__text {
+    max-width: 600px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    font-size: 18px;
+  }
+
+  &__box {
+    position: relative;
+    margin: 10px 20px;
+
+    &.active .questions__content {
+      height: 150px;
+      padding: 10px;
+    }
+
+    &.active .questions__subtitle::after {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__subtitle {
+    position: relative;
+    padding: 10px;
+    background-color: rgb(0, 162, 255);
+    color: $white;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+
+    &::after {
+      position: absolute;
+      content: "\f078";
+      font-family: "Font Awesome 5 Free";
+      right: 20px;
+      font-size: 18px;
+      transition: all 0.3s;
+    }
+  }
+
+  &__content {
+    position: relative;
+    background-color: $white;
+    height: 0;
+    overflow: hidden;
+    overflow-y: auto;
+    transition: all 0.5s;
+  }
+}
+
+// Персональная консультация
+.personal {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  p {
+    font-size: 16px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+
+    & span:nth-child(1) {
+      color: #48c857;
+      margin: 0 5px;
+    }
+
+    & span:nth-child(2) {
+      color: #009ce3;
+      margin: 0 5px;
+    }
+  }
+
+  span {
+    font-weight: 700;
+    font-size: 21px;
+    color: $accent;
+  }
+
+  &__price {
+    padding-top: 30px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+
+    span {
+      padding: 5px 10px;
+      color: $white;
+      font-size: 21px;
+      background-color: $accent;
+      border-radius: 10px;
+      margin-left: 10px;
+      letter-spacing: 5px;
+    }
+  }
+
+  &__btn {
+    padding-top: 20px;
+  }
+}
+
+// Кнопка справа на вверх
+.go-top {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  padding: 15px;
+  line-height: 15px;
+  display: block;
+  background-color: rgb(53, 116, 199);
+  border: transparent;
+  width: 50px;
+  height: 50px;
+  opacity: 50%;
+  transition: all 0.3s;
+  border-radius: 5px;
+
+  &:hover {
+    opacity: 100%;
+  }
+
+  span {
+    color: $white;
+    font-size: 21px;
+  }
+}
+
+.content {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__img-box {
+    flex: 1 1 350px;
+  }
+
+  &__info {
+    flex: 1 1 500px;
+  }
+
+  &__subtile {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    font-size: 16px;
+    span {
+      font-weight: 700;
+    }
+
+    p,
+    ul {
+      margin-bottom: 10px;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 25px;
+
+      &::before {
+        content: "\2192";
+        position: absolute;
+        left: 0;
+        color: $accent;
+      }
+    }
+  }
+}
+
+@import "media";

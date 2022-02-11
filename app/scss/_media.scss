@@ -1,0 +1,158 @@
+@media (max-width: 1200px) {
+  .about__inner {
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+    width: 100%;
+  }
+
+  .about__content {
+    margin-bottom: 30px;
+  }
+
+  .about__img {
+    padding: 0;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .header__top {
+    display: none;
+  }
+
+  .top__inner {
+    padding-bottom: 70px;
+    height: 280px;
+  }
+
+  .contact__inner {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .contact__info {
+    margin: 0 30px 30px 0;
+  }
+
+  .form {
+    max-width: 100%;
+  }
+
+  .footer {
+    padding: 0;
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 487px) {
+  .top-slider__title {
+    font-size: 45px;
+    line-height: 50px;
+  }
+
+  .title {
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  .top-slider__item {
+    padding-top: 80px;
+    height: 100vh;
+  }
+
+  .top-slider__content {
+    padding-left: 10px;
+  }
+
+  .top-slider__box {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .navigation {
+    height: 70px;
+    background-color: $top-bg;
+  }
+
+  .menu-btn {
+    display: inline-block;
+  }
+
+  // Меню
+
+  .navigation .menu-items {
+    position: absolute;
+    height: calc(100vh - 100%);
+    top: 100%;
+    right: 0;
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    background-color: $top-bg;
+    width: 100%;
+    line-height: 30px;
+    padding: 16px;
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateY(-100vh);
+    transition: all 0.3s ease-in-out;
+
+    &.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    i {
+      display: none;
+    }
+  }
+
+  .dropdown-menu,
+  .menu-right {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    background-color: transparent;
+  }
+
+  .menu-items li {
+    margin: 15px 10px;
+  }
+  .menu-items li a {
+    padding: 0 1rem;
+    display: block;
+    font-size: 1.4rem;
+  }
+  .menu-items li:hover {
+    background-color: transparent;
+  }
+
+  .menu-items .dropdown-menu,
+  .menu-items .menu-right{
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    top: 4rem;
+    padding-left: 1rem;
+    width: 100%;
+    max-height: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    overflow: hidden;
+    transition: all 0.2s ease;
+  }
+
+  .expand-btn.active + .expandable {
+    max-height: 100%;
+    transform: scaleY(1);
+  }
+
+  .expandable li {
+    margin: 0;
+  }
+  .expandable li a {
+    font-size: 1rem;
+  }
+}
