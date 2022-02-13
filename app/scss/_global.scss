@@ -15,9 +15,8 @@ body {
   margin: 0 auto;
 }
 
-
 .vs {
-padding: 70px 0;
+  padding: 70px 0;
 }
 
 .title {
@@ -37,26 +36,78 @@ padding: 70px 0;
     width: 25%;
     height: 2px;
     background-color: $accent;
-}
+  }
 }
 
-.top-text {
-  position: relative;
-    font-size: 12px;
-    line-height: 20px;
-    color: #777777;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
+.subtile {
+  font-size: 30px;
+  margin-bottom: 30px;
 }
 
 .text {
   position: relative;
-    font-size: 15px;
-    line-height: 28px;
-    color: #555555;
-    margin-bottom: 20px;
+  font-size: 15px;
+  line-height: 28px;
+  color: #555555;
+  margin-bottom: 20px;
+
+  &--bold {
+    font-weight: 700;
+  }
+}
+
+.beadrcrumbs {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 25px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    background-image: url(../images/icons/home.svg);
+    width: 16px;
+    height: 16px;
+    top: 5px;
+    left: 0;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    position: relative;
+    color: $black;
+    font-weight: 500;
+    padding-right: 30px;
+
+    &::after {
+      position: absolute;
+      content: "";
+      background-image: url(../images/icons/arrow-right.svg);
+      top: 50%;
+      right: 6px;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+    }
+
+    &:last-child {
+      color: $accent;
+      padding-right: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+
+  }
+
+  &__link {
+    color: inherit;
+  }
 }
 
 .btn {
@@ -95,7 +146,7 @@ padding: 70px 0;
   &:hover::after {
     height: 100%;
   }
-// Красная кнопка
+  // Красная кнопка
   &--red {
     position: relative;
     background-color: $accent;
@@ -111,9 +162,6 @@ padding: 70px 0;
     &::before {
       color: $white;
     }
-
-    
-
   }
 }
 

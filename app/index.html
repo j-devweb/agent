@@ -40,37 +40,50 @@
       <div class="navigation">
         <div class="container">
           <div class="navigation__inner">
-            <a class="logo" href="#">
+            <a class="logo" href="index.html">
               <img class="logo__img" src="images/logo-white.png" alt="Логотип сайта" style="width: 210px" />
             </a>
 
             <nav class="menu">
-              <ul class="menu-items">
+              <ul class="menu__list">
                 <li>
-                  <a class="menu-item" href="#body">Меню</a>
+                  <a class="menu__link" href="index.html">Главная</a>
                 </li>
-                <li><a class="menu-item" href="#about">Меню</a></li>
+                <li><a class="menu__link" href="about-page.html">О нас</a></li>
                 <li class="dropdown">
-                  <a class="menu-item expand-btn" href="#">Выпадающее меню</a>
+                  <a class="menu__link expand-btn" href="#">Услуги</a>
                   <ul class="dropdown-menu expandable">
-                    <li><a class="menu-item" href="#">Меню 1</a></li>
-                    <li><a class="menu-item" href="#">Меню 2</a></li>
-                    <li><a class="menu-item" href="#"> Меню 3</a></li>
+                    <li><a class="menu__link" href="travel.html">Туризм</a></li>
+                    <li><a class="menu__link" href="study.html">Учеба</a></li>
                     <li class="dropdown dropdown-right">
-                      <a class="menu-item expand-btn" href="#"
-                        >Подменю
+                      <a class="menu__link expand-btn" href="#">Работа
                         <i class="fas fa-caret-right"></i>
                       </a>
                       <ul class="menu-right expandable">
-                        <li><a class="menu-item" href="#">Подменю 1</a></li>
-                        <li><a class="menu-item" href="#">Пожменю 2</a></li>
-                        <li><a class="menu-item" href="#">Подменю 3</a></li>
+
+                        <li><a class="menu__link" href="work-permit.html">Рабочая виза (Work Permit)</a></li>
+                        <li><a class="menu__link" href="work-student.html">Разрешение на работу для студентов</a></li>
+                        <li><a class="menu__link" href="work-spouses.html">Разрешения на работу для супругов</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown dropdown-right">
+                      <a class="menu__link expand-btn" href="#">Имииграция
+                        <i class="fas fa-caret-right"></i>
+                      </a>
+                      <ul class="menu-right expandable">
+                        <li><a class="menu__link" href="startup.html">Стартап</a></li>
+                        <li><a class="menu__link" href="provincial.html">Провинциальные программы</a></li>
+                        <li><a class="menu__link" href="federal.html">Федеральные программы</a></li>
+                        <li><a class="menu__link" href="family.html">Воссоединение с семьёй</a></li>
+                        <li><a class="menu__link" href="assistant.html">Няни и сиделки</a></li>
                       </ul>
                     </li>
                   </ul>
                 </li>
+                <li><a class="menu__link" href="contact.html"> Связаться с нами</a></li>
               </ul>
             </nav>
+
             <button class="menu-btn" type="button" aria-label="Открыть меню">
               <span class="menu-btn__line"></span>
             </button>
@@ -133,7 +146,7 @@
             <img class="about__img" src="images/about.jpg" alt="" />
 
             <div class="about__content">
-              <p class="top-text">Актуально</p>
+              <span>Актуально</span>
               <h2 class="title">Информация о нашей компании.</h2>
 
               <p class="about__text">
@@ -156,7 +169,6 @@
       <section class="services vs" id="services">
         <div class="container">
           <div class="services__inner">
-            <p class="top-text">Чем мы вам можем быть полезными.</p>
             <h2 class="title">Наши услуги</h2>
             <p class="text">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore magnam deserunt eos eaque porro

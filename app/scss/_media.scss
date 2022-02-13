@@ -83,7 +83,7 @@
 
   // Меню
 
-  .navigation .menu-items {
+ .menu__list {
     position: absolute;
     height: calc(100vh - 100%);
     top: 100%;
@@ -94,7 +94,7 @@
     background-color: $top-bg;
     width: 100%;
     line-height: 30px;
-    padding: 16px;
+    padding: 0;
     overflow-y: auto;
     opacity: 0;
     transform: translateY(-100vh);
@@ -117,20 +117,21 @@
     background-color: transparent;
   }
 
-  .menu-items li {
-    margin: 15px 10px;
+  .menu__list li {
+    margin: 10px 5px;
   }
-  .menu-items li a {
-    padding: 0 1rem;
+
+  .menu__list li a {
+    padding: 0 10px;
     display: block;
-    font-size: 1.4rem;
+    font-size: 20px;
   }
-  .menu-items li:hover {
+  .menu__list li:hover {
     background-color: transparent;
   }
 
-  .menu-items .dropdown-menu,
-  .menu-items .menu-right{
+  .menu__list .dropdown-menu,
+  .menu__list .menu-right{
     position: static;
     opacity: 1;
     visibility: visible;

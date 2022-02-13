@@ -1,6 +1,6 @@
 // Start burger menu
 let menuBtn = document.querySelector('.menu-btn');
-let menu = document.querySelector('.menu-items');
+let menu = document.querySelector('.menu__list');
 let expandBtn = document.querySelectorAll('.expand-btn');
 menuBtn.onclick = () => {
   menuBtn.classList.toggle("active");
@@ -11,10 +11,10 @@ expandBtn.forEach((btn) => {
     btn.classList.toggle('active');
   });
 });
-menu.onclick = () => {
-  menu.classList.remove("active");
-  menuBtn.classList.remove("active");
-};
+// menu.onclick = () => {
+//   menu.classList.remove("active");
+//   menuBtn.classList.remove("active");
+// };
 
 // Меню бургер
   // $('.menu-btn').click(function(){
@@ -102,7 +102,6 @@ $(function () {
 
   // Плавный скролл
   $(".menu__list a, .go-top").on("click", function (event) {
-    event.preventDefault();
     let id = $(this).attr("href"),
       top = $(id).offset().top;
     $("body,html").animate({ scrollTop: top }, 1000);
