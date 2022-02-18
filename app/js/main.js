@@ -11,38 +11,6 @@ expandBtn.forEach((btn) => {
     btn.classList.toggle('active');
   });
 });
-// menu.onclick = () => {
-//   menu.classList.remove("active");
-//   menuBtn.classList.remove("active");
-// };
-
-// Меню бургер
-  // $('.menu-btn').click(function(){
-  //   $('.menu-items').toggleClass('active'); 
-  //   $('.menu-btn').toggleClass('active'); 
-  //  });
-  
-  // $('.menu').click(function(){
-  //   $('.menu-items').remove('active'); 
-  //   $('.menu-btn').remove('active'); 
-  //  });
-
-  // $('.expand-btn').click(function(){
-  //   $('.expand-btn').toggleClass('active'); 
-  //  });
-  
-  // $('ul li a').click(function() {
-  //   if ( $('.menu-items').hasClass('active')) {
-  //    $('.menu-items').removeClass('active');
-  //    $('.menu-btn').removeClass('active'); 
-  //   }
-  // });
-
-
-
-
-// End burger menu
-
 
 // Accordion queshions
 const accordion = document.getElementsByClassName('questions__box');
@@ -64,24 +32,6 @@ $(window).scroll(function () {
 });
 
 $(function () {
-// Меню бургер
-  // $('.menu-btn').click(function(){
-  //   $('.menu-items').toggleClass('active'); 
-  //   $('.menu-btn').toggleClass('active'); 
-  //  });
-  
-  // $('.menu').click(function(){
-  //   $('.menu-items').remove('active'); 
-  //   $('.menu-btn').remove('active'); 
-  //  });
-  
-  // $('ul li a').click(function() {
-  //   if ( $('.menu-items').hasClass('active')) {
-  //    $('.menu-items').removeClass('active');
-  //    $('.menu-btn').removeClass('active'); 
-  //   }
-  // }) 
-
   // Top slider
   $(".top-slider").slick({
     speed: 500,
@@ -107,11 +57,3 @@ $(function () {
     $("body,html").animate({ scrollTop: top }, 1000);
   });
 });
-
-
-
-// При скроле меню закрывается
-// window.onscroll = () => {
-//   menu.classList.remove("active");
-//   menuBtn.classList.remove("fa-times");
-// };

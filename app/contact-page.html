@@ -40,7 +40,7 @@
       <div class="navigation navigation--bg">
         <div class="container">
           <div class="navigation__inner">
-            <a class="logo" href="#">
+            <a class="logo" href="index.html">
               <img class="logo__img" src="images/logo-white.png" alt="Логотип сайта" style="width: 210px" />
             </a>
 
@@ -87,7 +87,7 @@
       <section class="top" style="background-image: url(images/bg/.jpg)">
         <div class="container">
           <div class="top__inner">
-            <h2 class="top__title">Работа</h2>
+            <h2 class="top__title">Связаться с нами</h2>
 
             <div class="breadcrumbs">
               <ul class="breadcrumbs__list">
@@ -95,10 +95,7 @@
                   <a class="breadcrumbs__link" href="index.html">Главная</a>
                 </li>
                 <li class="breadcrumbs__item">
-                  <span class="breadcrumbs__link" href="#">Услуги</span>
-                </li>
-                <li class="breadcrumbs__item">
-                  <span class="breadcrumbs__link" href="#">Работа</span>
+                  <span class="breadcrumbs__link" href="#">Связаться с нами</span>
                 </li>
               </ul>
             </div>
@@ -106,30 +103,60 @@
         </div>
       </section>
 
-      <section class="work vs">
+      <section class="contact-page vs">
         <div class="container">
-          <h3 class="subtile">Информация Заголовок</h3>
-          <div class="work__inner">
-
-              <div class="work__content">
-                <span class="text--bold"> Информация</span>
-                <p>
-                  Ежегодно Канада принимает сотни тысяч иностранных работников. Подавляющему большинству из них требуется получить разрешение на работу в Канаде (work permit), для осуществления законной трудовой деятельности на территории этой страны.
-                </p>
-
-                <ul class="work__list">
-                  <li class="work__item">
-                    <a class="work__link" href="work-permit.html">Рабочая виза (Work Permit)</a>
-                  </li>
-                  <li class="work__item">
-                    <a class="work__link" href="work-student.html">Разрешение на работу для студентов</a>
-                  </li>
-                  <li class="work__item">
-                    <a class="work__link" href="work-spouses.html">Разрешения на работу для супругов</a>
-                  </li>
-                </ul>
+          <div class="contact-page__inner">
+              <div class="contact-page__content">
+        
+                <div class="contact">
+                  <div class="container">
+                    <div class="contact__inner">
+                      <form class="form">
+                        <div class="form__title-box">
+                          <h2 class="title">Связаться с нами</h2>
+                          <p>Cотрудник Lift Up Immigration свяжется с вами в течении 48 часов.</p>
+                        </div>
+          
+                        <label class="form__box" for="name">
+                          <input
+                            class="form__field form__field--user"
+                            id="name"
+                            type="text"
+                            name="name"
+                            placeholder="Ваше имя"
+                            required
+                          />
+                          <span class="far fa-user"></span>
+                          <span class="visually-hidden">Введите ваше имя</span>
+                        </label>
+          
+                        <label class="form__box" for="email">
+                          <input class="form__field" id="email" type="email" name="email" placeholder="Ваша почта" required />
+                          <span class="visually-hidden">Введите вашу почту</span>
+                          <span class="far fa-envelope"></span>
+                        </label>
+          
+                        <label class="form__box" for="message">
+                          <textarea
+                            class="form__field form__field--big"
+                            id="message"
+                            name="message"
+                            placeholder="Ваше Сообщение"
+                          ></textarea>
+                          <span class="visually-hidden">Введите ваше сообщение</span>
+                          <span class="far fa-comment-dots"></span>
+                        </label>
+          
+                        <button class="form__btn btn--red" type="submit">Отправить</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                
 
               </div>
+              
+
           </div>
         </div>
       </section>

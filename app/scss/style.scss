@@ -391,7 +391,6 @@
 // Контакт
 
 .contact {
-  background-color: $top-bg-light;
   color: $black;
 
   &__top {
@@ -410,7 +409,6 @@
   max-width: 800px;
   width: 100%;
   background-color: $white;
-  padding: 20px;
   border-radius: 10px;
 
   &__title-box {
@@ -426,7 +424,6 @@
       position: absolute;
       top: 35px;
       left: -10px;
-
       z-index: 100;
     }
   }
@@ -440,7 +437,7 @@
     border-radius: 5px;
     font-size: 16px;
     font-weight: 400;
-    border: 1px solid transparent;
+    border: 1px solid rgb(12, 115, 175, 50%);
     outline: transparent;
     transition: all 0.3s;
 
@@ -457,6 +454,10 @@
     &:active {
       border-color: $accent;
     }
+
+    &:last-child {
+      margin-bottom: 20px;
+    }
   }
 
   &__field--big {
@@ -470,6 +471,7 @@
     border-radius: 5px;
     text-transform: uppercase;
     letter-spacing: 3px;
+    margin-top: 20px;
   }
 }
 
@@ -751,6 +753,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  background-color: #d3e6ec;
 
   // ======================top=====================
 
@@ -861,13 +864,13 @@
 
   &__img-box {
     flex: 1 1 350px;
-    margin-right: 30px;
   }
 
 }
 
 // travel - page
 .work {
+  
   p {
     margin-bottom: 30px;
   }
@@ -943,7 +946,6 @@ width: 100%;
 
   &__img-box {
     flex: 1 1 350px;
-
   }
 
   &__img {
@@ -985,7 +987,6 @@ width: 100%;
 
   &__img-box {
     flex: 1 1 350px;
-    margin-right: 30px;
   }
 
 }
@@ -1028,10 +1029,143 @@ width: 100%;
 
   &__img-box {
     flex: 1 1 350px;
-    margin-right: 30px;
   }
 
 }
+
+// work-student - page
+.startup {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  &__content {
+    font-size: 16px;
+    flex: 1 1 500px;
+    
+    p {
+      margin-bottom: 10px;
+    }
+
+  }
+
+  &__img-box {
+    flex: 1 1 350px;
+  }
+
+}
+
+// Express Entry
+
+.express-entry {
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__content {
+    font-size: 16px;
+    flex: 1 1 500px;
+    
+
+    p,
+    ul {
+      margin-bottom: 10px;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 25px;
+
+      &::before {
+        content: "\2192";
+        position: absolute;
+        left: 0;
+        color: $accent;
+      }
+    }
+  }
+
+  &__img-box {
+    flex: 1 1 350px;
+  }
+
+}
+
+// work-student - page
+.family {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  &__content {
+    font-size: 16px;
+    flex: 1 1 500px;
+    
+    p {
+      margin-bottom: 10px;
+    }
+
+  }
+
+  &__img-box {
+    flex: 1 1 350px;
+  }
+
+}
+
+// Иммиграция
+.immigration {
+
+  p {
+    margin-bottom: 30px;
+  }
+
+  &__list {
+display: flex;
+justify-content: center;
+gap: 20px;
+  }
+
+  &__item {
+max-width: 190px;
+width: 100%;
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100px;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    padding: 30px 0;
+    background-color: #eaeef1;
+    border: 1px solid $top-bg;
+    border-bottom: 3px solid $top-bg-light;
+    border-radius: 10px;
+    transition: border-color 0.3s, background-color 0.3s;
+
+    &:hover {
+      background-color: rgb(196, 196, 196, 0.1);
+      border-color: $accent;
+    }
+}
+}
+
 
 
 
