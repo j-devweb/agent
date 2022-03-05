@@ -15,21 +15,26 @@
         <div class="container">
           <div class="header__top-box">
             <ul class="header__contact">
-              <li><span class="far fa-envelope"></span>mail@gmail.com</li>
-              <li><span class="far fa-clock"></span>Режим работы</li>
+              <li>
+                <a href="mailto:info@liftupimmigration.com" target="_blank">
+                  <span class="far fa-envelope"></span>
+                  <span class="visually-hidden">Написать письмо</span>
+                  info@liftupimmigration.com
+                </a>
+              </li>
             </ul>
 
             <ul class="social">
               <li>
-                <a class="social__link" href="#"
-                  ><i class="fab fa-facebook-f"></i>
+                <a class="social__link" href="https://www.facebook.com/LiftUpImmigration/" target="_blank">
+                  <i class="fab fa-facebook-f"></i>
                   <span class="visually-hidden">Перейти в Facebook</span>
                 </a>
               </li>
               <li>
-                <a class="social__link" href="#"
-                  ><i class="fab fa-instagram"></i>
-                  <span class="visually-hidden">Перейти в Instagramk</span>
+                <a class="social__link" href="https://www.instagram.com/lift_up_immigration/" target="_blank">
+                  <i class="fab fa-instagram"></i>
+                  <span class="visually-hidden">Перейти в Instagram</span>
                 </a>
               </li>
             </ul>
@@ -55,25 +60,35 @@
                   <ul class="dropdown-menu expandable">
                     <li><a class="menu__link" href="travel.html">Туризм</a></li>
                     <li><a class="menu__link" href="study.html">Учеба</a></li>
-                    <li class="dropdown dropdown-right">
-                      <a class="menu__link expand-btn" href="#">Работа
+
+                    <!-- Выпадающее меню слева Работа -->
+                    <li class="dropdown dropdown-left">
+                      <a class="menu__link expand-btn" href="#"
+                        >Работа
                         <i class="fas fa-caret-right"></i>
                       </a>
-                      <ul class="menu-right expandable">
-
-                        <li><a class="menu__link" href="work-permit.html">Рабочая виза (Work Permit)</a></li>
-                        <li><a class="menu__link" href="work-student.html">Разрешение на работу для студентов</a></li>
-                        <li><a class="menu__link" href="work-spouses.html">Разрешения на работу для супругов</a></li>
+                      <ul class="menu-left expandable">
+                        <li><a class="menu__link" href="work-permit.html">Рабочая виза (Work Permit, LMIA)</a></li>
+                        <li>
+                          <a class="menu__link" href="work-student.html">PGWP (Разрешение на работу для студентов)</a>
+                        </li>
+                        <li>
+                          <a class="menu__link" href="work-spouses.html"
+                            >Open Work Permit (Разрешения на работу для супругов)</a
+                          >
+                        </li>
                       </ul>
                     </li>
-                    <li class="dropdown dropdown-right">
-                      <a class="menu__link expand-btn" href="#">Имииграция
+
+                    <!-- Выпадающее меню слева Иммиграция -->
+                    <li class="dropdown dropdown-left">
+                      <a class="menu__link expand-btn" href="#"
+                        >Имииграция
                         <i class="fas fa-caret-right"></i>
                       </a>
-                      <ul class="menu-right expandable">
-                        <li><a class="menu__link" href="startup.html">Стартап</a></li>
+                      <ul class="menu-left expandable">
                         <li><a class="menu__link" href="express-entry.html">Express-Entry</a></li>
-                        <li><a class="menu__link" href="federal.html">Федеральные программы</a></li>
+                        <li><a class="menu__link" href="provincial.html">Провинциальные программы (PNP)</a></li>
                         <li><a class="menu__link" href="family.html">Воссоединение с семьёй</a></li>
                         <li><a class="menu__link" href="assistant.html">Няни и сиделки</a></li>
                       </ul>
@@ -191,7 +206,7 @@
               <div class="services__item">
                 <a class="services__link" href="#">
                   <img src="images/icons/visa.png" alt="" />
-                  <span class="services__subtitle">Виза</span>
+                  <span class="services__subtitle">Учеба</span>
                   <p class="text">
                     Что бы приехать в Канаду, нужно получить визу и много документов, мы вам поможем в этом
                   </p>
@@ -270,7 +285,7 @@
         </div>
       </div>
 
-      <div class="how-work vs" id="how-work">
+      <!-- <div class="how-work vs" id="how-work">
         <div class="container">
           <div class="title how-work__title">Как мы работаем.</div>
           <div class="how-work__inner">
@@ -308,7 +323,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <div class="questions vs">
         <div class="container">
@@ -402,60 +417,99 @@
             <div class="personal__btn">
               <a class="btn btn--red" href="#contact">Связаться с нами</a>
             </div>
-            <div class="personal__price">Стоимость: <span>200$</span></div>
+            <div class="personal__price">Стоимость: <span>150$</span></div>
           </div>
         </div>
       </div>
+
+      <section class="map">
+        <div class="container">
+          <div class="map__inner">
+          <iframe class="map__interactive"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2602.6607628816814!2d-123.12039398431058!3d49.28282497933146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548671f53f78215d%3A0x4c14b1c90fd52223!2sLift%20Up%20Immigration%20Inc.!5e0!3m2!1sen!2sca!4v1646469976041!5m2!1sen!2sca"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+      </section>
     </main>
 
     <footer class="footer" id="footer">
       <div class="container">
         <div class="footer__inner">
-          <a class="logo" href="#">
-            <img class="logo__img" src="images/logo-white.png" alt="Логотип сайта" style="width: 210px" />
-          </a>
-
-          <div class="footer__item footer__item-info">
-            <ul>
-              <li>
-                <i class="fas fa-map-marker-alt"></i>
-                <span>1055 W Джорджия-стрит, Ванкувер, Британская Колумбия, BC V6E 3P3. </span>
+          <div class="footer__item">
+            <ul class="footer__list-img">
+              <li class="footer__item-img">
+                <a class="logo" href="#">
+                  <img class="footer__img" src="images/logo-white.png" alt="Логотип сайта" style="width: 210px" />
+                </a>
               </li>
-
-              <li>
-                <i class="fas fa-phone-volume"></i>
-                <span>+1 (778) - 320 - 3691</span>
+              <li class="footer__item-img">
+                <a
+                  href="https://www.college-ic.ca/protecting-the-public/find-an-immigration-consultant"
+                  target="_blank"
+                >
+                  <img class="footer__img" src="images/license-img.png" alt="Логотип сайта" style="width: 100px" />
+                </a>
               </li>
-
-              <li>
-                <i class="fas fa-globe"></i>
-                <span>liftupmmigration.com</span>
-              </li>
-
-              <li>
-                <i class="far fa-envelope"></i>
-                <span>info@liftupimmigration.com</span>
-              </li>
-
-              <li>
-                <i class="fab fa-instagram"></i>
-                <span>@liftupimmigration.com</span>
+              <li class="footer__item-img">
+                <a href="https://www.capic.ca/" target="_blank">
+                  <img class="footer__img" src="images/license-img1.png" alt="Логотип сайта" style="width: 100px" />
+                </a>
               </li>
             </ul>
           </div>
 
-          <div class="footer__item footer__item-menu">
-            <ul>
-              <li><a href="#services">Услуги</a></li>
-              <li><a href="travel.html">Туризм</a></li>
-              <li><a href="study.html">Учеба</a></li>
-              <li><a href="work.html">Работа</a></li>
-              <li><a href="immigration.html">Иммиграция</a></li>
+          <div class="footer__item footer__item-info">
+            <ul class="footer__list-menu">
+              <li class="footer__item-menu">
+                <a
+                href="https://www.google.com/maps?q=Lift+Up+Immigration+Inc.,+701+W+Georgia+St+Suite+1500,+Vancouver,+BC+V7Y+1G5&ftid=0x548671f53f78215d:0x4c14b1c90fd52223&hl=en-CA&gl=ca&entry=gps&lucs=s2se,a2&shorturl=1 "
+                target="_blank" >
+                <i class="fas fa-map-marker-alt"></i>
+                <span class="visually-hidden">Наш адрес</span>
+                1500-701 W Georgia St Vancouver BC V7Y 1G5 Canada. 
+              </a>
+              </li>
+
+              <li class="footer__item-menu">
+                <a href="tel:+17783203691">
+                  <i class="fas fa-phone-volume"></i>
+                  <span class="visually-hidden">Позвонить</span>
+                  +1 (778) - 320 - 3691
+                </a>
+              </li>
+
+              <li class="footer__item-menu">
+                <a href="http://www.liftupimmigration.com" target="_blank">
+                  <i class="fas fa-globe"></i>
+                  <span class="visually-hidden">Перейти на сайт</span>
+                  www.liftupmmigration.com
+                </a>
+              </li>
+
+              <li class="footer__item-menu">
+                <a href="mailto:info@liftupimmigration.com">
+                  <i class="far fa-envelope"></i>
+                  <span class="visually-hidden">Написать письмо</span>
+                  info@liftupimmigration.com
+                </a>
+              </li>
+
+              <li class="footer__item-menu">
+                <a class="social__link" href="https://www.instagram.com/lift_up_immigration/" target="_blank">
+                  <i class="fab fa-instagram"></i>
+                  <span class="visually-hidden">Перейти в Инстаграм</span>
+                  @liftupimmigration.com
+                </a>
+              </li>
             </ul>
           </div>
 
           <div class="footer__item">
-            <h4>Источники медиа</h4>
+            <h3>Источники медиа</h3>
             <ul class="footer__media-box">
               <li>
                 <div>

@@ -91,9 +91,12 @@
       margin-right: 20px;
     }
 
+    a:hover {
+      color: $accent;
+    }
+
     span {
       margin-right: 10px;
-      color: $accent;
     }
   }
 
@@ -156,19 +159,19 @@
 }
 
 .dropdown-menu,
-.menu-right {
+.menu-left {
   position: absolute;
   left: 0;
   top: 30px;
   width: 100%;
-  min-width: 210px;
+  min-width: 250px;
   background-color: $top-bg;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
 }
 
-.menu-right {
+.menu-left {
   top: 0;
   left: -110%;
 }
@@ -179,7 +182,7 @@
   visibility: visible;
 }
 
-.dropdown-right:hover .menu-right {
+.dropdown-left:hover .menu-left {
   left: -100%;
   opacity: 1;
   visibility: visible;
@@ -206,7 +209,6 @@
 
 .top-slider {
   &__item {
-    padding-top: 150px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -236,7 +238,7 @@
   }
 
   &__box {
-    height: calc(100vh - 150px);
+    height: 100vh;
     display: flex;
     align-items: center;
     position: relative;
@@ -344,7 +346,7 @@
 // Section services
 .services {
   background-color: #eaeef1;
- 
+
   &__box {
     @include grid(250px);
   }
@@ -648,7 +650,23 @@
   }
 
   &__btn {
-    padding-top: 20px;
+    margin-top: 30px;
+    text-align: center;
+  }
+}
+
+// Карта
+.map {
+  padding: 50px 0;
+  &__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__interactive {
+    width: 100%;
+    height: 300px;
   }
 }
 
@@ -664,59 +682,53 @@
     flex-wrap: wrap;
   }
 
-  .logo {
-    position: relative;
-    margin-right: 30px;
-    z-index: 10;
-  }
-
   &__item {
     margin: 10px 20px;
+    max-width: 210px;
 
-    h4 {
-      font-size: 25px;
-      margin-bottom: 20px;
+    h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
       font-weight: 400;
     }
   }
 
+  &__list-img {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__item-img {
+    margin-bottom: 20px;
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  // Футер меню
   &__item-info {
     max-width: 300px;
     width: 100%;
     display: flex;
+  }
 
-    ul li {
-      display: flex;
-      width: 100%;
-      align-items: center;
-      margin-bottom: 10px;
-    }
+  &__item-menu {
+    margin-bottom: 5px;
+    padding: 5px 0;
 
     i {
       margin-right: 20px;
       font-size: 21px;
     }
 
-    span {
-      line-height: 20px;
-    }
-  }
-
-  &__item-menu {
-    li {
-      font-size: 16px;
-    }
-
-    li:nth-child(1) {
-      font-size: 25px;
-      margin-bottom: 20px;
-    }
-
-    li a {
-      transition: all 0.3s;
+    a {
+      display: flex;
+      align-items: center;
+      line-height: 23px;
 
       &:hover {
-        color: $accent;
+        color:$accent;
       }
     }
   }
@@ -824,8 +836,8 @@
   }
 
   p {
-      margin-bottom: 10px;
-    }
+    margin-bottom: 10px;
+  }
 
   &__img-box {
     flex: 1 1 350px;
@@ -838,6 +850,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 20px;
   }
 
   &__content {
@@ -865,46 +878,6 @@
   &__img-box {
     flex: 1 1 350px;
   }
-
-}
-
-// travel - page
-.work {
-  
-  p {
-    margin-bottom: 30px;
-  }
-
-  &__list {
-display: flex;
-justify-content: center;
-
-  }
-
-  &__item {
-max-width: 150px;
-width: 100%;
-
-  }
-
-  &__link {
-    position: relative;
-    display: block;
-    width: 100%;
-    text-align: center;
-    background-color: #eaeef1;
-    border: 1px solid $top-bg;
-    border-bottom: 3px solid $top-bg-light;
-    border-radius: 10px;
-    transition: border-color 0.3s, background-color 0.3s;
-
-    &:hover {
-      background-color: rgb(196, 196, 196, 0.1);
-      border-color: $accent;
-    }
-}
-
-
 }
 
 // travel - page
@@ -965,7 +938,6 @@ width: 100%;
   &__content {
     font-size: 16px;
     flex: 1 1 500px;
-    
 
     p,
     ul {
@@ -988,12 +960,11 @@ width: 100%;
   &__img-box {
     flex: 1 1 350px;
   }
-
 }
 
 // work-student - page
 .work-spouses {
-  &__box{
+  &__box {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -1007,7 +978,6 @@ width: 100%;
   &__content {
     font-size: 16px;
     flex: 1 1 600px;
-    
 
     p,
     ul {
@@ -1030,38 +1000,12 @@ width: 100%;
   &__img-box {
     flex: 1 1 350px;
   }
-
-}
-
-// work-student - page
-.startup {
-  &__inner {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-
-  &__content {
-    font-size: 16px;
-    flex: 1 1 500px;
-    
-    p {
-      margin-bottom: 10px;
-    }
-
-  }
-
-  &__img-box {
-    flex: 1 1 350px;
-  }
-
 }
 
 // Express Entry
 
 .express-entry {
-  &__inner{
+  &__inner {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -1075,7 +1019,6 @@ width: 100%;
   &__content {
     font-size: 16px;
     flex: 1 1 500px;
-    
 
     p,
     ul {
@@ -1098,7 +1041,6 @@ width: 100%;
   &__img-box {
     flex: 1 1 350px;
   }
-
 }
 
 // work-student - page
@@ -1113,62 +1055,15 @@ width: 100%;
   &__content {
     font-size: 16px;
     flex: 1 1 500px;
-    
+
     p {
       margin-bottom: 10px;
     }
-
   }
 
   &__img-box {
     flex: 1 1 350px;
   }
-
 }
-
-// Иммиграция
-.immigration {
-
-  p {
-    margin-bottom: 30px;
-  }
-
-  &__list {
-display: flex;
-justify-content: center;
-gap: 20px;
-  }
-
-  &__item {
-max-width: 190px;
-width: 100%;
-  }
-
-  &__link {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 100px;
-    font-size: 20px;
-    font-weight: 600;
-    text-align: center;
-    padding: 30px 0;
-    background-color: #eaeef1;
-    border: 1px solid $top-bg;
-    border-bottom: 3px solid $top-bg-light;
-    border-radius: 10px;
-    transition: border-color 0.3s, background-color 0.3s;
-
-    &:hover {
-      background-color: rgb(196, 196, 196, 0.1);
-      border-color: $accent;
-    }
-}
-}
-
-
-
-
-
 
 @import "media";
