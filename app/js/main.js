@@ -50,6 +50,32 @@ $(function () {
     ],
   });
 
+  // Services slider
+  $('.services__slider').slick({
+    centerMode: true,
+    centerPadding: '60px',
+    slidesToShow: 3,
+    dots: true,
+    arrows:true,
+    prevArrow: '<button type="button" class="slick-prev"><img class="slick-arrow" src="images/icons/services-arrow-left.svg" alt=""></button>',
+    nextArrow: '<button type="button" class="slick-next"><img class="slick-arrow" src="images/icons/services-arrow-right.svg" alt=""></button>',
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: '40px',
+          slidesToShow: 1
+        }
+      }
+    ]
+
+  });
+  
+
+
+
   // Плавный скролл
   $(".menu__list a, .go-top").on("click", function (event) {
     let id = $(this).attr("href"),

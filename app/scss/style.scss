@@ -347,11 +347,15 @@
 .services {
   background-color: #eaeef1;
 
-  &__box {
-    @include grid(250px);
+  &__slider {
+    position: relative;
+    height: 300px;
+    width: 100%;
   }
 
   &__item {
+    width: 250px;
+    height: 300px;
     position: relative;
     text-align: center;
     background-color: $white;
@@ -370,180 +374,113 @@
   }
 
   &__link {
-    padding: 30px 20px;
-    display: block;
+    padding: 20px;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
   }
 
   img {
-    display: block;
-    margin: auto;
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin-bottom: 20px;
   }
 
   &__subtitle {
     text-transform: uppercase;
     font-size: 21px;
-    line-height: 34px;
+    line-height: 25px;
     margin-bottom: 15px;
     font-weight: 600;
     color: #555;
     transition: color 0.3s;
-  }
-}
-
-// Контакт
-
-.contact {
-  color: $black;
-
-  &__top {
-    max-width: 500px;
-    margin: 0 auto;
-    margin-bottom: 30px;
+    margin-bottom: auto;
   }
 
-  &__inner {
+  &__text {
+    @include clamp(5);
+    margin-bottom: auto;
+    margin-top: 10px;
+  }
+
+  // Настройка слайдера для services
+  .slick-slide {
+    padding: 0 15px;
+    position: relative;
+  }
+
+  .slick-dots {
     display: flex;
     justify-content: center;
-  }
-}
-
-.form {
-  max-width: 800px;
-  width: 100%;
-  background-color: $white;
-  border-radius: 10px;
-
-  &__title-box {
-    margin-bottom: 30px;
-    text-align: center;
+    margin-top: 30px;
   }
 
-  &__box {
-    position: relative;
-    margin: 20px;
+  .slick-dots button {
+    font-size: 0;
+    border: 0;
+    padding: 0;
+    margin: 0 5px;
+    width: 15px;
+    height: 15px;
+    background-color: rgb(121, 120, 120);
+    border-radius: 50%;
+  }
 
-    span {
-      position: absolute;
-      top: 35px;
-      left: -10px;
-      z-index: 100;
+  .slick-active button {
+    opacity: 1;
+    width: 15px;
+    height: 15px;
+    background-color: $accent;
+  }
+
+  .slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 10px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    padding: 0;
+    z-index: 10;
+  }
+
+  .slick-prev,
+  .slick-next {
+    background-color: transparent;
+    opacity: 30%;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 100%;
     }
   }
 
-  &__field {
-    position: relative;
-    display: block;
-    width: 100%;
-    padding: 5px 30px;
-    background-color: #f0f0f0;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: 400;
-    border: 1px solid rgb(12, 115, 175, 50%);
-    outline: transparent;
-    transition: all 0.3s;
-
-    &::placeholder {
-      color: black;
-      opacity: 50%;
-      font-size: 15px;
-    }
-
-    &:focus {
-      border-color: $accent;
-    }
-
-    &:active {
-      border-color: $accent;
-    }
-
-    &:last-child {
-      margin-bottom: 20px;
-    }
+  .slick-prev {
+    left: 0;
   }
 
-  &__field--big {
-    height: 150px;
-    resize: none;
+  .slick-next {
+    right: 0;
   }
 
-  &__btn {
-    padding: 12px 25px;
-    border: transparent;
-    border-radius: 5px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-top: 20px;
-  }
-}
+  // .slick-arrow.slick-prev {
+  //   left: -10px;
+  //   background-image: url(../images/icons/services-arrow-left.svg);
+  //   z-index: 10;
+  // }
 
-// How to work
-.how-work {
-  background-color: $white;
-
-  &__inner {
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    padding-top: 30px;
-  }
-
-  &__box {
-    position: relative;
-    max-width: 300px;
-    width: 100%;
-    text-align: center;
-    line-height: 20px;
-    color: $black;
-    font-size: 16px;
-    margin: 10px 15px 20px;
-
-    &:not(:last-child)::before {
-      position: absolute;
-      content: "";
-      background-image: url(../images/arrow.png);
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 100%;
-      width: 100px;
-      height: 100px;
-      top: 0;
-      right: -63px;
-    }
-
-    a {
-      font-size: 18px;
-      color: $top-bg-light;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-decoration: underline;
-
-      &:hover {
-        color: $accent;
-      }
-    }
-
-    span {
-      display: block;
-      width: 100px;
-      height: 100px;
-      padding: 35px;
-      line-height: 30px;
-      background-color: #009ce3;
-      border-radius: 50%;
-      font-size: 30px;
-      margin: auto;
-      margin-bottom: 20px;
-      color: $white;
-      border: 1px solid $accent;
-    }
-  }
+  // .slick-arrow.slick-next {
+  //   right: -10px;
+  //   background-image: url(../images/icons/services-arrow-right.svg);
+  // }
 }
 
 // Вопросы
 .questions {
-  background-color: #eaeef1;
-
   &__inner {
     max-width: 800px;
   }
@@ -601,6 +538,7 @@
 
 // Персональная консультация
 .personal {
+  background-color: #eaeef1;
   position: relative;
   width: 100%;
   overflow: hidden;
@@ -652,6 +590,85 @@
   &__btn {
     margin-top: 30px;
     text-align: center;
+  }
+}
+
+// Форма Контакт
+.contact {
+  color: $black;
+
+  &__top {
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.form {
+  max-width: 800px;
+  width: 100%;
+  background-color: $white;
+  border-radius: 10px;
+
+  &__title-box {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  &__box {
+    position: relative;
+    margin: 20px;
+  }
+
+  &__field {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 400;
+    border: 1px solid rgb(12, 115, 175, 50%);
+    outline: transparent;
+    transition: all 0.3s;
+
+    &::placeholder {
+      color: black;
+      opacity: 50%;
+      font-size: 15px;
+    }
+
+    &:focus {
+      border-color: $accent;
+    }
+
+    &:active {
+      border-color: $accent;
+    }
+
+    &:last-child {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__field--big {
+    height: 150px;
+    resize: none;
+  }
+
+  &__btn {
+    padding: 12px 25px;
+    border: transparent;
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-top: 20px;
   }
 }
 
@@ -728,7 +745,7 @@
       line-height: 23px;
 
       &:hover {
-        color:$accent;
+        color: $accent;
       }
     }
   }
@@ -771,7 +788,6 @@
 
   &__inner {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 350px;
@@ -780,7 +796,8 @@
   &__title {
     font-size: 35px;
     text-transform: uppercase;
-    margin-bottom: 10px;
+    text-align: center;
+    line-height: 35px;
   }
 }
 
@@ -973,6 +990,10 @@
     &:not(:last-child) {
       margin-bottom: 30px;
     }
+
+    &--wrap {
+      flex-wrap: wrap-reverse;
+    }
   }
 
   &__content {
@@ -1003,7 +1024,6 @@
 }
 
 // Express Entry
-
 .express-entry {
   &__inner {
     display: flex;
@@ -1065,5 +1085,142 @@
     flex: 1 1 350px;
   }
 }
+
+// travel - page
+.provincial {
+  &__box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 20px;
+
+    &--wrap {
+      flex-wrap: wrap-reverse;
+    }
+  }
+
+  &__content {
+    font-size: 16px;
+    flex: 1 1 500px;
+
+    p,
+    ul {
+      margin-bottom: 10px;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 25px;
+
+      &::before {
+        content: "\2192";
+        position: absolute;
+        left: 0;
+        color: $accent;
+      }
+    }
+  }
+
+  &__img-box {
+    flex: 1 1 350px;
+  }
+
+  &__img {
+    width: 100%;
+  }
+}
+
+// Анкета
+.questionnaire {
+
+  &__inner {
+  }
+}
+// Форма анкеты
+.questionnaire-form {
+
+  &__list {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+  }
+
+  &__item {
+    max-width: 370px;
+    width: 100%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &--big {
+      max-width: 770px;
+      width: 100%;
+    }
+  }
+
+  &__item-title {
+    width: 100%;
+    margin: 10px;
+    font-size: 30px;
+    font-weight: 700;
+    border-top: 1px solid rgb(0, 105, 153,10%);
+    border-bottom: 1px solid rgb(0, 105, 153,10%);
+    padding: 30px 0;
+    text-align: center;
+  }
+
+  &__label {
+    line-height: 20px;
+  }
+
+  &__box {
+   
+  }
+
+  &__field,
+  &__select {
+    width: 100%;
+    height: 50px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid $top-bg-light;
+    outline: transparent;
+    transition: border 0.3s ease;
+
+    &:focus {
+      border: 1px solid $accent;
+    }
+    &:hover {
+      border: 1px solid $accent;
+    }
+  }
+
+  &__field--big {
+    height: 150px;
+    resize: none;
+  }
+
+		&__radio {
+      display: flex;
+		}
+
+		&__radio-item {
+      &:first-child {
+        margin-right: 30px;
+      }
+		}
+
+    &__btn {
+      text-align: center;
+    }
+
+
+
+}
+
 
 @import "media";
