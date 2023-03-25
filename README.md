@@ -1,4 +1,4 @@
 Верстка сайта по макету Figma и установка на CMS Wordpress.
 
-http://liftupimmigration.com/ - 
+http://liftupimmigration.com
 
